@@ -9,6 +9,21 @@ cite {
   margin-top: 10px;
 }
 
+main {
+  width: 79%;
+  display: inline-block;
+  vertical-align: top;
+}
+
+
+#external-links {
+  width: 20%;
+  display: inline-block;
+  vertical-align: top;
+}
+
+
+
 #external-links ul {
   list-style-type: none;
   padding-left: 0px;
@@ -29,4 +44,25 @@ figure {
 figcaption {
   font-style: italic;
   text-align: right;
+}
+
+body {
+  max-width: 960px;
+}
+
+
+@media screen and (max-width: 500px) {
+  body {
+    font-size: x-small;
+  }
+}
+
+
+@media screen and (max-width: 500px) {
+  main {
+    width: 100%;
+  }
+  #external-links {
+    width: 100%
+  }
 }
