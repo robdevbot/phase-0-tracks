@@ -1,3 +1,48 @@
 * {
-    background-color: blue;
+  font-family: Arial, Helvetica, Sans-Serif;
+  
+}
+
+
+.column-1 {
+  background-color: #ffcc99;
+  width: 45%;
+  display: inline-block;
+  vertical-align: top;
+  padding: 10px;
+ }
+ 
+ .column-1 h2 {
+   color: pink;
+ }
+
+.column-2 {
+  background-color: #ccffcc;
+  width: 45%;
+  display: inline-block;
+  vertical-align: top;
+  padding: 10px;
+}
+
+a:hover {
+  color: red;
+}
+
+a:active {
+  color: orange;
+}
+
+a:visited {
+  color: green;
+}
+
+header {
+  border: 5px solid black;
+  border-radius: 50px 0 0 0;
+}
+
+
+header, footer {
+  padding: 10px;
+  background-color: yellow;
 }
