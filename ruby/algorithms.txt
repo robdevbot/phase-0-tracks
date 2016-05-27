@@ -1,0 +1,26 @@
+Using an elevator:
+
+If desired floor is greater than current floor, press up button.
+If desired floor is smaller than current floor, press down button.
+If desired floor equals current floor, end program.
+Wait until elevator arrives at current floor.
+Enter elevator and locate button panel.
+For all available buttons, do the following:
+Look at the button.
+If visible button equals desired floor, press the button
+Otherwise, look at the next button.
+If the last button does not equal the desired floor, exit elevator and end program.
+Wait until elevator arrives at desired floor, then exit elevator and end program.
+
+
+
+Taking out the trash:
+
+For all trash bins in the house, do the following:
+If bin fullness is greater than 90% of bin capacity, do the following:
+Close trash bag and remove from bin.
+Place bin by door and add 1 to a count of bags-by-the-door.
+Move to next trash bin.
+When all trash bins have been examined, do the following:
+If the number of bags by the door equals 0, end program.
+Otherwise, collect bags by the door, take them out to the alley, and place them in the bin there and end program.
