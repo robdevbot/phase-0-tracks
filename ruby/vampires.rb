@@ -33,14 +33,7 @@ employee_count.to_i.times do
         insurance = true
     end
     
-    
-    puts "Name: #{name}"
-    puts "Age: #{age}"
-    puts "Year born: #{year_born}"
-    puts "Calculated age: #{calculated_age}"
-    puts "Garlic Bread?: #{garlicbread}"
-    puts "Insurance?: #{insurance}"
-    
+
     vampire_status = "Results inconclusive."
     
     if (age.to_i == calculated_age) && (garlicbread || insurance)
@@ -58,7 +51,22 @@ employee_count.to_i.times do
     if name == "Drake Cula" || name == "Tu Fang"
         vampire_status = "Definitely a vampire"
     end    
+    
+    puts "Please list any allergies you have. Type done when complete."
+    
+    allergy = "allergy"
+    
+    while allergy != "sunshine" && allergy != "done"
+        allergy = gets.chomp
         
+        if allergy == "sunshine"
+            vampire_status = "Probably a vampire"
+        end
+
+    end
+  
     puts vampire_status
 
 end
+
+puts "Actually, never mind! What do these questions have to do with anything? Let's all be friends."
