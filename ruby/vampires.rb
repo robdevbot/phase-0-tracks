@@ -35,9 +35,22 @@ puts "Calculated age: #{calculated_age}"
 puts "Garlic Bread?: #{garlicbread}"
 puts "Insurance?: #{insurance}"
 
+vampire_status = "Results inconclusive."
 
 if (age.to_i == calculated_age) && (garlicbread || insurance)
-    puts "Probably a vampire"
-else
-    puts "Results inconclusive."
+    vampire_status = "Probably not a vampire"
 end
+
+if (age.to_i != calculated_age) && (!garlicbread || !insurance)
+    vampire_status = "Probably a vampire"
+end
+
+if (age.to_i != calculated_age) && !garlicbread && !insurance
+    vampire_status = "Almost certainly a vampire"
+end
+
+if name == "Drake Cula" || name == "Tu Fang"
+    vampire_status = "Definitely a vampire"
+end    
+    
+puts vampire_status
