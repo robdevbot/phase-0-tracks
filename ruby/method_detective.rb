@@ -38,6 +38,7 @@ p "Elementary,    my   dear        Watson!".split.join(' ')
 p "z".ord
 # => 122 
 # (What is the significance of the number 122 in relation to the character z?)
+# Answer: it is the ASCII code for that character
 
 p "How many times does the letter 'a' appear in this string?".count("a")
 # => 4
