@@ -11,7 +11,7 @@ p "iNvEsTiGaTiOn".swapcase!
 p "zom".insert(1, "o")
 # => “zoom”
 
-# p "enhance".<???>
+p "enhance".insert(0, "    ").concat("    ")
 # => "    enhance    "
 
 p "Stop! You’re under arrest!".upcase
@@ -22,20 +22,20 @@ p "the usual".concat(" suspects")
 p "the usual" << " suspects"
 #=> "the usual suspects"
 
-# " suspects".<???>
+p " suspects".insert(0, "the usual")
 # => "the usual suspects"
 
 p "The case of the disappearing last letter".chop
 p "The case of the disappearing last letter".chop!
 # => "The case of the disappearing last lette"
 
-# "The mystery of the missing first letter".<???>
+p "The mystery of the missing first letter"[1..-1]
 # => "he mystery of the missing first letter"
 
 p "Elementary,    my   dear        Watson!".split.join(' ')
 # => "Elementary, my dear Watson!"
 
-# "z".<???>
+p "z".ord
 # => 122 
 # (What is the significance of the number 122 in relation to the character z?)
 
