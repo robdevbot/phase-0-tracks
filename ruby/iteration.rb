@@ -55,21 +55,53 @@ integers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
 p integers
 
-def five_or_more(array)
-    new_array = []
-    array.map! do |x|
-        if (x > 5)
-            new_array << x
-        end
-    end
+#1
+
+integers.reverse_each do |x|
+	if x < 5
+		integers.delete(x)
+	end
 end
 
-five_or_more(integers)
 p integers
-    
-    
+integers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+#2
+integers.select! { |x| x > 5 }
+
+p integers
+
+
+# integers.each do |x|
+# 	p x
+# 	if x < 5
+# 		integers.delete(x)
+# 	end
+# 	p integers
+# end
 
 
 
+
+
+
+
+
+
+
+
+# integers.map! do |x|
+# 	if x > 5
+# 		x
+# 	end
+# end
+
+# p integers
+
+
+
+
+
+p integers
 
 
