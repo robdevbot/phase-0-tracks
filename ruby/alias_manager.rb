@@ -6,47 +6,55 @@
 ## Join the array and reassign to name variable
 
 
+continue_or_quit = ""
 
-puts "Please enter your first and last name, separated by a single space:"
-name = gets.chomp
-
-code_name = name
-
-first_and_last = code_name.split(" ") # this chunk reverses the name, changing Joe Smith to Smith Joe
-first = first_and_last[0]
-last = first_and_last[1]
-first_and_last[0] = last
-first_and_last[1] = first
-code_name = first_and_last.join(" ")
-
-
-vowels = "aeiouAEIOU"
-consonants = "bcdfghjklmnpqrstvwxyzBCDFGHJKLMNPQRSTVWXYZ"
-
-i = 0
-
-while i < code_name.length
-
-    if code_name[i] != " " && vowels.include?(code_name[i]) # if the letter is a non-space vowel
-        if code_name[i] == "u"
-            code_name[i] = "a"
-        elsif code_name[i] == "U"
-            code_name[i] = "A"
-        else
-            code_name[i] = vowels[vowels.index(code_name[i]) + 1] # Unless it's an end-of-string condition, change the letter to the next character in the vowels string
+while continue_or_quit != "quit"
+    
+    puts "Please enter your first and last name, separated by a single space:"
+    name = gets.chomp
+    
+    code_name = name
+    
+    first_and_last = code_name.split(" ") # this chunk reverses the name, changing Joe Smith to Smith Joe
+    first = first_and_last[0]
+    last = first_and_last[1]
+    first_and_last[0] = last
+    first_and_last[1] = first
+    code_name = first_and_last.join(" ")
+    
+    
+    vowels = "aeiouAEIOU"
+    consonants = "bcdfghjklmnpqrstvwxyzBCDFGHJKLMNPQRSTVWXYZ"
+    
+    i = 0
+    
+    while i < code_name.length
+    
+        if code_name[i] != " " && vowels.include?(code_name[i]) # if the letter is a non-space vowel
+            if code_name[i] == "u"
+                code_name[i] = "a"
+            elsif code_name[i] == "U"
+                code_name[i] = "A"
+            else
+                code_name[i] = vowels[vowels.index(code_name[i]) + 1] # Unless it's an end-of-string condition, change the letter to the next character in the vowels string
+            end
+        elsif code_name[i] != " "  # if the letter is a non-space consonant
+            if code_name[i] == "z"
+                code_name[i] = "b"
+            elsif code_name[i] == "Z"
+                code_name[i] = "B"
+            else
+                code_name[i] = consonants[consonants.index(code_name[i]) + 1] # Unless it's an end-of-string condition, change the letter to the next character in the consonants string
+            end
         end
-    elsif code_name[i] != " "  # if the letter is a non-space consonant
-        if code_name[i] == "z"
-            code_name[i] = "b"
-        elsif code_name[i] == "Z"
-            code_name[i] = "B"
-        else
-            code_name[i] = consonants[consonants.index(code_name[i]) + 1] # Unless it's an end-of-string condition, change the letter to the next character in the consonants string
-        end
+            
+        i += 1
+    
     end
-        
-    i += 1
+    
+    puts "Your secret code name is #{code_name}!"
+    
+    puts "Hit enter to encode another name, or type quit to exit."
+    continue_or_quit = gets.chomp
 
 end
-
-puts "Your secret code name is #{code_name}!"
