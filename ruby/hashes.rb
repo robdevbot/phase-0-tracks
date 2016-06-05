@@ -57,14 +57,28 @@ customer_data = {
 
 puts customer_data
 
+puts "What value would you like to update?"
+update_answer = gets.chomp
+
+if update_answer != "done"
+    
+    puts "Please enter the new value for #{update_answer}"
+    update_value = gets.chomp
+    
+    if update_answer == "age"
+        update_value = update_value.to_i
+    elsif update_answer == "number_of_children"
+        update_value = update_value.to_i
+    elsif update_answer == "likes_lime" || update_answer == "needs_sandproofing"
+        if update_value == "y"
+            update_value = true
+        else
+            update_value = false
+        end
+    end
+    customer_data[update_answer.to_sym] = update_value 
+end
 
 
 
-
-
-
-
-
-
-
-
+puts customer_data
