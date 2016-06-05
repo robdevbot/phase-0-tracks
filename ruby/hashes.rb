@@ -1,4 +1,4 @@
-# Prompt the user for info: name, age, number of children, decor theme, likes_lime, needs_sandproofing, vintage_level
+# Prompt the user for info: name, age, number of children, decor theme, likes_lime, needs_sandproofing, vintage_style
 # Take that info in
 # Create a hash with all of that info
 # Print the hash to the screen
@@ -9,26 +9,40 @@
 # Print the hash to the screen
 
 
-puts "Please enter your name"
+puts "Please enter your name."
 name = gets.chomp
 
-puts "Please enter your age"
+puts "Please enter your age."
 age = gets.chomp.to_i
 
-puts "Please enter your number_of_children"
+puts "Please enter your number of children."
 number_of_children = gets.chomp.to_i
 
-puts "Please enter your decor_theme"
+puts "Please enter your preferred decor theme."
 decor_theme = gets.chomp
 
-puts "Please enter your likes_lime"
-likes_lime = gets.chomp.to_b
+puts "Do you like lime? (y/n)"
+lime_yn = gets.chomp
 
-puts "Please enter your needs_sandproofing"
-needs_sandproofing = gets.chomp.to_b
+if lime_yn == "y"
+    likes_lime = true
+else
+    likes_lime = false
+end
 
-puts "Please enter your vintage_level"
-vintage_level = gets.chomp
+
+puts "Do you need sandproofing? (y/n)"
+sandproofing_yn = gets.chomp
+
+if sandproofing_yn == "y"
+    needs_sandproofing = true
+else
+    needs_sandproofing = false
+end
+
+
+puts "Please enter your preferred style of vintage"
+vintage_style = gets.chomp
 
 
 customer_data = {
@@ -38,7 +52,19 @@ customer_data = {
     decor_theme: decor_theme,
     likes_lime: likes_lime,
     needs_sandproofing: needs_sandproofing,
-    vintage_level: vintage_level
+    vintage_style: vintage_style
 }
 
 puts customer_data
+
+
+
+
+
+
+
+
+
+
+
+
