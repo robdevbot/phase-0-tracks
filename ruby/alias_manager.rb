@@ -1,9 +1,28 @@
-# Prompt the user for a name and collect it into a variable
-# Swap the first and last name:
-## Put the names into an array with split
-## Assign the first and last to string variables
-## Reassign the values in the array
-## Join the array and reassign to name variable
+# Loop while 'continue' input provided at end isn't 'quit'
+## Prompt the user for a name and collect it into a variable
+## Copy variable to code_name variable to be manipulated
+## Swap the first and last name:
+## # Put the names into an array with split
+## # Assign the first and last to string variables
+## # Reassign the values in the array
+## # Join the array and reassign to code_name variable
+## create two strings: the set of all vowels and the set of all consonants
+## Iterate through code name's characters
+## # if the current character is a non-space vowel
+## ## and with exceptions for end-of-vowel-set characters
+## ## change it to the next vowel in the set of all vowels
+## # Otherwise
+## ## and with exceptions for end-of-consonant-set characters
+## ## change it to the next consonant in the set of all consonants
+## Output the completed code name
+## And add the original name and the code name as a key-value pair in a hash of all names
+## Prompt user for continue or quit input
+#
+
+
+
+
+
 
 all_names = {}
 
