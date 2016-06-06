@@ -5,6 +5,7 @@
 ## Reassign the values in the array
 ## Join the array and reassign to name variable
 
+all_names = {}
 
 continue_or_quit = ""
 
@@ -51,6 +52,7 @@ while continue_or_quit != "quit"
         i += 1
     
     end
+    all_names[code_name] = name
     
     puts "Your secret code name is #{code_name}!"
     
@@ -58,3 +60,6 @@ while continue_or_quit != "quit"
     continue_or_quit = gets.chomp
 
 end
+
+
+all_names.each {|key, value| puts "#{key} is actually #{value}" }
