@@ -48,7 +48,7 @@ while continue_or_quit != "quit"
     
     i = 0
     
-    while i < code_name.length
+    while i < code_name.length # iterating through each character in the string
     
         if code_name[i] != " " && vowels.include?(code_name[i]) # if the letter is a non-space vowel
             if code_name[i] == "u"
@@ -71,7 +71,7 @@ while continue_or_quit != "quit"
         i += 1
     
     end
-    all_names[code_name] = name
+    all_names[code_name] = name # adding the name and code name as a key-value pair in this hash
     
     puts "Your secret code name is #{code_name}!"
     
@@ -81,4 +81,4 @@ while continue_or_quit != "quit"
 end
 
 
-all_names.each {|key, value| puts "#{key} is actually #{value}" }
+all_names.each {|key, value| puts "#{key} is actually #{value}" } # output of all names and code names
