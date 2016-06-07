@@ -46,4 +46,11 @@ class Student
   
 end
 
+student_body = []
 
+50.times { student_body << Student.new  }
+
+student_body.each do |s| 
+  s.study(3)
+  s.party(5)
+end
