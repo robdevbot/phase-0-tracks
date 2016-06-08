@@ -62,12 +62,14 @@ end
 update_quantity(groc_list, "bananas", 10)
 
 
-
-
-
 # Method to print a list and make it look pretty
 # input: the list
 # steps: iterate over the hash, print the contents
 # output: the pretty list
 
+def pretty_list(list)
+    list.each {|x, y| puts "#{x}: #{y}"}
+end
 
+
+pretty_list(groc_list)
