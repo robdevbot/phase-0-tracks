@@ -79,3 +79,21 @@ remove_item(groc_list, "koolaid")
 update_quantity(groc_list, "Ice Cream", 4)
 
 
+# What did you learn about pseudocode from working on this challenge?
+## I think the provided partial pseudocode really helped. Normally my pseudocode is just a few sentences, but adding inputs and outputs really streamlined things when it came time to write actual methods.
+
+# What are the tradeoffs of using arrays and hashes for this challenge?
+## An array is simpler, but doesn't inherently provide the ability to have two pieces of data - the grocery item and the quantity. A two-dimensional array could have been used, but that would have been somewhat complicated as well.
+
+# What does a method return?
+## The value that was most recently evaluated
+
+# What kind of things can you pass into methods as arguments?
+## Pretty much any kind of Ruby object - integers, floats, booleans, data structures, custom class instances, other methods, and so on.
+
+
+# How can you pass information between methods?
+## By storing that information in a variable that your methods can both access.
+
+# What concepts were solidified in this challenge, and what concepts are still confusing?
+## I think my understanding of the .map method is a bit better, but I still need to work on debugging.
