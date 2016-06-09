@@ -19,23 +19,23 @@ end
     # print the list to the console Hash.keys [can you use one of your other methods here?]
 # output: a hash
 
-list = {}
+groc_list = {}
 
-def create_list
-    puts "What is on your grocery list?\nList items separated by spaces."
-    list_array = gets.chomp.split(" ")
-    
-    groc_list = Hash[list_array.map {|x| [x, 1]} ]
-    
-    pretty_list(groc_list)
-end
 
-create_list
+puts "What is on your grocery list?\nList items separated by spaces."
+list_array = gets.chomp.split(" ")
+
+groc_list = Hash[list_array.map {|x| [x, 1]} ]
+
+pretty_list(groc_list)
+
+
+
 
 
 # Method to add an item to a list
 # input: the list, item name and optional quantity
-# steps: list[koolaid] => 1
+# steps: add item as new key in hash with value of 1
 # output: the updated hash
 
 def add_item(list, item, quantity)
@@ -43,13 +43,13 @@ def add_item(list, item, quantity)
     puts list
 end
 
-add_item(groc_list, "koolaid", 1)
+
 
 
 # remove(list, koolaid)
 # Method to remove an item from the list
 # input: the list, item name
-# steps: Hash.delete(item) 
+# steps: delete the item from the hash by referencing its key
 # output: the updated hash
 
 
@@ -59,7 +59,7 @@ def remove_item(list, item)
 end
 
 
-remove_item(groc_list, "koolaid")
+
 
 
 # Method to update the quantity of an item
@@ -72,6 +72,10 @@ def update_quantity(list, item, quantity)
     puts list
 end
 
-update_quantity(groc_list, "bananas", 10)
+
+create_list
+add_item(groc_list, "koolaid", 1)
+remove_item(groc_list, "koolaid")
+update_quantity(groc_list, "Ice Cream", 4)
 
 
