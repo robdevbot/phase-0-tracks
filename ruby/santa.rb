@@ -30,11 +30,7 @@ class Santa
         end
     end
     
-    def change_gender(new_gender)
-        @gender = new_gender
-    end
-    
-    
+
     attr_accessor:gender
     attr_reader:ethnicity
     attr_accessor:age
