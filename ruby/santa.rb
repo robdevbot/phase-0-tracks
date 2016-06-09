@@ -18,7 +18,7 @@ class Santa
     end
     
     def celebrate_birthday
-        age += 1
+        @age += 1
     end
     
     def get_mad_at(reindeer)
@@ -34,13 +34,11 @@ class Santa
         @gender = new_gender
     end
     
-    def age
-        @age
-    end
     
-    def ethnicity
-        @ethnicity
-    end
+    attr_accessor:gender
+    attr_reader:ethnicity
+    attr_reader:age
+    
     
 end
 
@@ -59,5 +57,11 @@ fred_claus = Santa.new("male", "black")
 
 fred_claus.get_mad_at("Dancer")
 
-fred_claus.change_gender("female")
+puts fred_claus.age
+puts fred_claus.ethnicity
 
+fred_claus.celebrate_birthday
+fred_claus.gender = "agender"
+
+puts fred_claus.gender
+puts fred_claus.age
