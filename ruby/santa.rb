@@ -37,31 +37,17 @@ class Santa
     
     attr_accessor:gender
     attr_reader:ethnicity
-    attr_reader:age
+    attr_accessor:age
     
     
 end
 
-# santas = []
-# santas << Santa.new("agender", "black")
-# santas << Santa.new("female", "Latino")
-# santas << Santa.new("bigender", "white")
-# santas << Santa.new("male", "Japanese")
-# santas << Santa.new("female", "prefer not to say")
-# santas << Santa.new("gender fluid", "Mystical Creature (unicorn)")
-# santas << Santa.new("N/A", "N/A")
+example_genders = ["agender", "female", "bigender", "male", "female", "gender fluid", "N/A"]
+example_ethnicities = ["black", "Latino", "white", "Japanese-African", "prefer not to say", "Mystical Creature (unicorn)", "N/A"]
 
-# puts santas
+50.times do
+    x = Santa.new(example_genders.sample, example_ethnicities.sample)
+    x.age = rand(140)
+    puts "This Santa is #{x.gender}, #{x.ethnicity}, and #{x.age} years old!"
+end
 
-fred_claus = Santa.new("male", "black")
-
-fred_claus.get_mad_at("Dancer")
-
-puts fred_claus.age
-puts fred_claus.ethnicity
-
-fred_claus.celebrate_birthday
-fred_claus.gender = "agender"
-
-puts fred_claus.gender
-puts fred_claus.age
