@@ -1,3 +1,13 @@
+# Method to print a list and make it look pretty
+# input: the list
+# steps: iterate over the hash, print the contents
+# output: the pretty list
+
+
+def pretty_list(list)
+    list.each {|x, y| puts "#{x}: #{y}"}
+end
+
 # Method to create a list
 # input: string of items separated by spaces (example: "carrots apples cereal pizza")
 # steps: 
@@ -9,15 +19,18 @@
     # print the list to the console Hash.keys [can you use one of your other methods here?]
 # output: a hash
 
-groc_list = {
-    "bananas" => 5,
-    "yogurt" => 1,
-    "green_beans" => 1,
-    "peanut_butter" => 1
-}
+list = {}
 
-puts groc_list
+def create_list
+    puts "What is on your grocery list?\nList items separated by spaces."
+    list_array = gets.chomp.split(" ")
+    
+    groc_list = Hash[list_array.map {|x| [x, 1]} ]
+    
+    pretty_list(groc_list)
+end
 
+create_list
 
 
 # Method to add an item to a list
@@ -62,14 +75,3 @@ end
 update_quantity(groc_list, "bananas", 10)
 
 
-# Method to print a list and make it look pretty
-# input: the list
-# steps: iterate over the hash, print the contents
-# output: the pretty list
-
-def pretty_list(list)
-    list.each {|x, y| puts "#{x}: #{y}"}
-end
-
-
-pretty_list(groc_list)
