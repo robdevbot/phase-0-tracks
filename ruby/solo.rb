@@ -32,3 +32,36 @@ class Moped
   attr_accessor:runs
 
 end
+
+
+all_mopeds = []
+
+puts "Let's add a moped to our garage. Hit enter to continue, or type 'done' to quit."
+
+done_or_not = ""
+
+while done_or_not != "done"
+
+    puts "What company made this moped?"
+    make = gets.chomp
+    
+    puts "What's the model name?"
+    model = gets.chomp
+    
+    puts "What year was it made?"
+    year = gets.chomp.to_i
+    
+    ped = Moped.new(make, model, year)
+    
+    all_mopeds << ped
+    
+    puts "Let's add another moped to our garage. Hit enter to continue, or type 'done' to quit."
+
+    done_or_not = gets.chomp
+end
+
+puts "Here's what's in your garage:"
+
+all_mopeds.each do |x|
+   puts "A #{x.year} #{x.make} #{x.model}"
+end
