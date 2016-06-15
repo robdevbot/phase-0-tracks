@@ -3,13 +3,17 @@
 // for each character, add it to a new string
 // return the new string
 
-var inputString = "hello";
-var newString = "";
-
-for (i = inputString.length - 1; i >= 0; i--) {
-    // console.log("i is equal to " + i);
-    // console.log("character at index i is " + inputString[i]);
-    newString += inputString[i];
+function reverse(inputString) {
+    var newString = "";
+    
+    for (i = inputString.length - 1; i >= 0; i--) {
+        // console.log("i is equal to " + i);
+        // console.log("character at index i is " + inputString[i]);
+        newString += inputString[i];
+    }
+    
+    return newString;
 }
 
-console.log(newString);
+console.log(reverse("hello"));
+
