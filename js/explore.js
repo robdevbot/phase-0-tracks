@@ -15,5 +15,12 @@ function reverse(inputString) {
     return newString;
 }
 
-console.log(reverse("hello"));
+reversedString = reverse("Madam I'm Bartholomew");
+
+if (100 > 2) {
+    console.log(reversedString)
+}
+else {
+    console.log("Whoops!")
+};
 
