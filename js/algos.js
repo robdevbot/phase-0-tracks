@@ -19,6 +19,6 @@ function longest(array) {
 
 var superheroes = ["Hulk", "Thor", "Iron Man", "Captain America", "New Superhero with a crazy long name"];
 
-
-
 console.log(longest(superheroes));
+
+// add more arrays to test this
