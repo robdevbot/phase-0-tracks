@@ -38,6 +38,8 @@ require_relative 'state_data'
 
 class VirusPredictor
 
+
+# This method accepts 3 arguments for the New class instance constructor, setting the relevant arguments to their instance-variable equivalents
   def initialize(state_of_origin, population_density, population)
     @state = state_of_origin
     @population = population
@@ -45,13 +47,19 @@ class VirusPredictor
   end
 
 
-
+# This method is basically just driver code that calls the two private methods that perform the calculations
   def virus_effects
     predicted_deaths(@population_density, @population, @state)
     speed_of_spread(@population_density, @state)
   end
 
   private
+
+
+# This method calculates a number of deaths based on population density. A longish if/else statement is used to categorize population densities
+# into 5 tiers, with higher-density states having a larger percentage of deaths.
+# The floor method is used on each result to produce an integer value.
+# The method prints its results to the console.
 
   def predicted_deaths(population_density, population, state)
     # predicted deaths is solely based on population density
@@ -70,6 +78,11 @@ class VirusPredictor
     print "#{@state} will lose #{number_of_deaths} people in this outbreak"
 
   end
+
+# This method calculates the speed of the spread in much the same way as the above method, using an if statement with 5 tiers of population density to
+# define the speed, then printing the result to the console
+
+
 
   def speed_of_spread(population_density, state) #in months
     # We are still perfecting our formula here. The speed is also affected
