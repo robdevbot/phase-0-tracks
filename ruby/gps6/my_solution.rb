@@ -113,17 +113,33 @@ end
  # initialize VirusPredictor for each state
 
 
-alabama = VirusPredictor.new("Alabama", STATE_DATA["Alabama"][:population_density], STATE_DATA["Alabama"][:population])
-alabama.virus_effects
+# alabama = VirusPredictor.new("Alabama", STATE_DATA["Alabama"][:population_density], STATE_DATA["Alabama"][:population])
+# alabama.virus_effects
 
-jersey = VirusPredictor.new("New Jersey", STATE_DATA["New Jersey"][:population_density], STATE_DATA["New Jersey"][:population])
-jersey.virus_effects
+# jersey = VirusPredictor.new("New Jersey", STATE_DATA["New Jersey"][:population_density], STATE_DATA["New Jersey"][:population])
+# jersey.virus_effects
 
-california = VirusPredictor.new("California", STATE_DATA["California"][:population_density], STATE_DATA["California"][:population])
-california.virus_effects
+# california = VirusPredictor.new("California", STATE_DATA["California"][:population_density], STATE_DATA["California"][:population])
+# california.virus_effects
 
-alaska = VirusPredictor.new("Alaska", STATE_DATA["Alaska"][:population_density], STATE_DATA["Alaska"][:population])
-alaska.virus_effects
+# alaska = VirusPredictor.new("Alaska", STATE_DATA["Alaska"][:population_density], STATE_DATA["Alaska"][:population])
+# alaska.virus_effects
+
+#=======================================================================
+# DRY implementation to print virus effects for all 50 states.
+# I believe this belongs outside of the class, because the class should be able to interpret multiple data sets, not just US states.
+# For example, this could be performed on a Hash of Australia's states and territories, or on Canada's provinces
+
+# Iterate through STATE_DATA Hash
+# for all key-value pairs, declare a new VirusPredictor instance for the current state
+# call the .virus_effects method on that state
+
+STATE_DATA.each do |key, value| 
+    current_state = VirusPredictor.new(key, STATE_DATA[key][:population_density], STATE_DATA[key][:population])
+    current_state.virus_effects
+end
+
+
 
 
 #=======================================================================
