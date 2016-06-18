@@ -49,8 +49,8 @@ class VirusPredictor
 
 # This method is basically just driver code that calls the two private methods that perform the calculations
   def virus_effects
-    predicted_deaths(@population_density, @population, @state)
-    speed_of_spread(@population_density, @state)
+    predicted_deaths
+    speed_of_spread
   end
 
   private
@@ -61,7 +61,7 @@ class VirusPredictor
 # The floor method is used on each result to produce an integer value.
 # The method prints its results to the console.
 
-  def predicted_deaths(population_density, population, state)
+  def predicted_deaths
     # predicted deaths is solely based on population density
     if @population_density >= 200
       number_of_deaths = (@population * 0.4).floor
@@ -84,7 +84,7 @@ class VirusPredictor
 
 
 
-  def speed_of_spread(population_density, state) #in months
+  def speed_of_spread #in months
     # We are still perfecting our formula here. The speed is also affected
     # by additional factors we haven't added into this functionality.
     speed = 0.0
@@ -144,3 +144,8 @@ end
 
 #=======================================================================
 # Reflection Section
+# What are the differences between the two different hash syntaxes shown in the state_data file?
+# What does require_relative do? How is it different from require?
+# What are some ways to iterate through a hash?
+# When refactoring virus_effects, what stood out to you about the variables, if anything?
+# What concept did you most solidify in this challenge?
