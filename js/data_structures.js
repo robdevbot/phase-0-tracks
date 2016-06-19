@@ -1,20 +1,20 @@
-// var colors = ["blue", "green", "red", "yellow"];
-// var horses = ["Pete", "Spot", "Ed", "Secretariat"];
+var colors = ["blue", "green", "red", "yellow"];
+var horses = ["Pete", "Spot", "Ed", "Secretariat"];
 
-// colors.push("purple");
-// horses.push("Seabiscuit")
+colors.push("purple");
+horses.push("Seabiscuit")
 
-// console.log(colors);
-// console.log(horses);
+console.log(colors);
+console.log(horses);
 
-// var horses_with_colors = {};
+var horses_with_colors = {};
 
-// for (i = 0; i < colors.length; i++) {
-//     horses_with_colors[horses[i]] = colors[i]
+for (i = 0; i < colors.length; i++) {
+    horses_with_colors[horses[i]] = colors[i]
 
-// }
+}
 
-// console.log(horses_with_colors)
+console.log(horses_with_colors)
 
 function Car(make, model, cylinders, color) {
     
