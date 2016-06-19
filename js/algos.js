@@ -79,7 +79,8 @@ console.log(objects_equal(jake, oscar));
 
 
 
-console.log(words_maker(26));
-
-
+for (r=0; r<=10; r++) {
+    words_array = words_maker(7);
+    console.log("Here are some new words: " + words_array + ". The longest word in this collection is " + longest(words_array));
+}
 
