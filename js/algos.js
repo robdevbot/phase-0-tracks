@@ -18,7 +18,10 @@ function longest(array) {
 
 
 var superheroes = ["Hulk", "Thor", "Iron Man", "Captain America", "New Superhero with a crazy long name"];
+var car_companies = ["Ford", "Chevrolet", "Toyota", "Honda", "Volkswagen", "Saab"];
+var birds = ["Pelican", "Toucan", "Ostrich", "Wren", "American Tree Sparrow"];
+
 
 console.log(longest(superheroes));
-
-// add more arrays to test this
+console.log(longest(car_companies));
+console.log(longest(birds));
