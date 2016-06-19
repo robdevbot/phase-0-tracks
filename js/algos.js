@@ -14,7 +14,12 @@ function longest(array) {
     return array[longest_index];
 }
 
-function objects_equal(object1, object2) {
+function objects_equal(object1, object2) { 
+    
+    // I probably should have called this something else.
+    // This just checks to see if any of the key-value pairs match
+    // Since I want this to only return true when something is found, instead of returning false the first time it checks a set of k-v pairs
+    // , the flag variable is used to hold a true value whenever a match is found.
  
     for (var i in object1) {
         
@@ -46,7 +51,7 @@ var tamir = {name: "Tamir", age: 54};
 console.log(objects_equal(steve, tamir));
 
 var jake = {name: "Jacob", age: 54};
-var oscar = {name: "Oscar", age: 44};
+var oscar = {name: "Oscar", number_of_kids: 4};
 
 console.log(objects_equal(jake, oscar));
 
