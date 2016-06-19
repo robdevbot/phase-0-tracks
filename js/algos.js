@@ -16,7 +16,7 @@ function longest(array) {
 
 function objects_equal(object1, object2) { 
     
-    // I probably should have called this something else.
+    // I probably should have named this something else.
     // This just checks to see if any of the key-value pairs match
     // Since I want this to only return true when something is found, instead of returning false the first time it checks a set of k-v pairs
     // , the flag variable is used to hold a true value whenever a match is found.
@@ -32,6 +32,28 @@ function objects_equal(object1, object2) {
 
     return bool_flag;
 }
+
+function words_maker(number_of_words) {
+    return_array = [];
+    
+    var alphabet = "abcdefghijklmnopqrstuvwxyz";
+
+
+    for (i=0; i<number_of_words; i++) {
+        var new_word = "";
+        
+        for (j=0; j<(Math.floor((Math.random() * 10) + 1)); j++) { // do this between 1 and 10 times
+            new_word += alphabet[(Math.floor(Math.random() * 26))]; // pushes in a random character from the alphabet string
+        }
+        
+        return_array.push(new_word);
+    }
+    
+    return return_array;
+}
+
+
+
 
 
 
@@ -55,6 +77,9 @@ var oscar = {name: "Oscar", number_of_kids: 4};
 
 console.log(objects_equal(jake, oscar));
 
+
+
+console.log(words_maker(26));
 
 
 
