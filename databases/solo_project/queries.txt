@@ -1,0 +1,44 @@
+1. Display the information in one table (either table is fine).
+
+sqlite> SELECT * FROM countries;
+
+U.S.A.|true|318900000|1
+Taiwan|false|23476000|2
+France|true|66689000|3
+
+
+2. Update an item that meets some condition (you can choose a condition that makes sense).
+
+sqlite> UPDATE countries SET population=323625762 WHERE name="U.S.A.";
+sqlite> SELECT * FROM countries;
+U.S.A.|true|323625762|1
+Taiwan|false|23476000|2
+France|true|66689000|3
+
+
+3. Display the information in both tables using one query.
+
+sqlite> SELECT * FROM countries, languages WHERE countries.language_id = languages.id;
+U.S.A.|true|323625762|1|1|English
+Taiwan|false|23476000|2|2|Mandarin
+France|true|66689000|3|3|French
+
+
+4. Display a narrower selection of columns (fewer columns than all of them, in other words) from both tables using one query.
+
+sqlite> SELECT * FROM countries, languages WHERE countries.language_id = languages.id LIMIT 2;
+U.S.A.|true|323625762|1|1|English
+Taiwan|false|23476000|2|2|Mandarin
+
+
+5. Delete an item that meets some condition (you can choose a condition that makes sense).
+
+DELETE FROM countries WHERE UN_member="false";
+
+sqlite> DELETE FROM countries WHERE UN_member="false";
+sqlite> SELECT * FROM countries;
+U.S.A.|true|323625762|1
+France|true|66689000|3
+
+
+
