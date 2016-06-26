@@ -12,9 +12,22 @@ Output
 There are some repetitive columns if we choose to view all fields. 
 Choose instead to just view the user's names, the business name, the star rating, and the comment.
 
+Input:
 SELECT businesses.name, users.first_name, users.last_name, reviews.stars, reviews.comment 
 FROM reviews JOIN businesses JOIN users ON reviews.business_id = businesses.id AND reviews.user_id = users.id;
 
+Output:
+Target|Jerry|Seinfeld|5|Great shopping experience!
+K-Mart|Homer|Simpson|4|Not enough donuts
+Wal-Mart|Stewie|Griffin|2|Awful shopping experience
 
--------------------
+-----------------------------------------------------------------------------------------------
 How do you view the data of all three tables for just one particular business? 
+
+Input:
+SELECT reviews.stars, reviews.comment, users.first_name, users.last_name, businesses.name FROM reviews 
+   ...> INNER JOIN businesses ON reviews.business_id = businesses.id AND businesses.name = "K-Mart"
+   ...> INNER JOIN users ON users.id = reviews.user_id;
+
+Output:
+4|Not enough donuts|Homer|Simpson|K-Mart
