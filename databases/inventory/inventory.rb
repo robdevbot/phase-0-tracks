@@ -45,7 +45,18 @@ while option != 9
     elsif option == 3
        puts db.execute("SELECT * FROM users, hardware WHERE users.hardware_id = hardware.id")
     elsif option == 4
-        puts "Add!"    
+        puts "What is the new user's name?"
+        user_name = gets.chomp
+        puts "What is the user's office number?"
+        office = gets.chomp.to_i
+        puts "What is the ID number for their computer?"
+        hw_id = gets.chomp.to_i
+        
+        db.execute("INSERT INTO users (name, office_number, hardware_id) VALUES (?, ?, ?)", [user_name, office, hw_id])
+        
+        
+        
+        
     elsif option == 5
         puts "Which user do you want to delete?"
         user_to_delete = gets.chomp
