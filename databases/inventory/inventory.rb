@@ -53,10 +53,6 @@ while option != 9
         hw_id = gets.chomp.to_i
         
         db.execute("INSERT INTO users (name, office_number, hardware_id) VALUES (?, ?, ?)", [user_name, office, hw_id])
-        
-        
-        
-        
     elsif option == 5
         puts "Which user do you want to delete?"
         user_to_delete = gets.chomp
@@ -66,7 +62,20 @@ while option != 9
         db.execute(delete_command)
         puts "User #{user_to_delete} deleted."
     elsif option == 6
-        puts "New Computer!"    
+        puts "What is the new computer's name?"
+        hw_name = gets.chomp
+        puts "Is this a laptop or desktop computer?"
+        
+        laptop_or_desktop = gets.chomp
+        
+        if laptop_or_desktop == "laptop"
+            desktop = "false"
+        else
+            desktop = "true"
+        end
+
+        time_now = Time.now.to_s
+        db.execute("INSERT INTO hardware (name, desktop, date_of_addition) VALUES (?, ?, ?)", [hw_name, desktop, time_now])
     elsif option == 7
         puts "Different computer!"    
     elsif option == 8
