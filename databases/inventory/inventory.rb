@@ -18,6 +18,42 @@ require 'sqlite3'
 db = SQLite3::Database.new("inventory.db")
 
 
+
+option = 0
+
+
+while option != 8
+
+menu = <<-opts_menu
+    Options:
+    1. View all users
+    2. View all hardware profiles
+    3. View all users with their assigned hardware
+    4. Add user
+    5. Add hardware profile
+    6. Change a user's computer
+    7. View a count of all hardware in inventory.
+    8. Exit
+opts_menu
+
+
+    puts menu
+    option = gets.chomp.to_i
+end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 # create inventory and hardware tables (if they're not there already)
 # each create command is declared as a big string and run with db.execute separately
 
