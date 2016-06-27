@@ -39,11 +39,11 @@ while option != 9
     
     
     if option == 1
-        puts "Users!"
+        puts db.execute("SELECT * FROM users")
     elsif option == 2
-        puts "Hardware!"
+        puts db.execute("SELECT * FROM hardware")
     elsif option == 3
-        puts "Users and hardware!"    
+       puts db.execute("SELECT * FROM users, hardware WHERE users.hardware_id = hardware.id")
     elsif option == 4
         puts "Add!"    
     elsif option == 5
