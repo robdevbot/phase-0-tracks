@@ -10,31 +10,29 @@ db = SQLite3::Database.new("inventory.db")
 # each create command is declared as a big string and run with db.execute separately
 
 # create table of hardware
-create_hardware_cmd = <<-SQL
-  CREATE TABLE IF NOT EXISTS hardware(
-    id INTEGER PRIMARY KEY,
-    name VARCHAR(255),
-    desktop BOOLEAN,
-    date_of_addition TIMESTAMP
-  )
-SQL
+# create_hardware_cmd = <<-SQL
+#   CREATE TABLE IF NOT EXISTS hardware(
+#     id INTEGER PRIMARY KEY,
+#     name VARCHAR(255),
+#     desktop BOOLEAN,
+#     date_of_addition TIMESTAMP
+#   )
+# SQL
 
-# create table of users
-create_users_cmd = <<-SQL
-  CREATE TABLE IF NOT EXISTS users(
-    id INTEGER PRIMARY KEY,
-    name VARCHAR(255),
-    office_number INTEGER,
-    hardware_id INTEGER,
-    FOREIGN KEY (hardware_id) REFERENCES hardware(id)
-  )
-SQL
-
-
-db.execute(create_users_cmd)
-db.execute(create_hardware_cmd)
+# # create table of users
+# create_users_cmd = <<-SQL
+#   CREATE TABLE IF NOT EXISTS users(
+#     id INTEGER PRIMARY KEY,
+#     name VARCHAR(255),
+#     office_number INTEGER,
+#     hardware_id INTEGER,
+#     FOREIGN KEY (hardware_id) REFERENCES hardware(id)
+#   )
+# SQL
 
 
+# db.execute(create_users_cmd)
+# db.execute(create_hardware_cmd)
 
 
 # Code to seed hardware table with various computers
@@ -58,8 +56,13 @@ db.execute(create_hardware_cmd)
 
 
 # code to seed users table with office workers
-db.execute("INSERT INTO users (name, office_number, hardware_id) VALUES (?, ?, ?)", ["Joe Smith", 548, 2])
-db.execute("INSERT IdNTO users (name, office_number, hardware_id) VALUES (?, ?, ?)", ["Sarah Connor", 528, 1])
+# db.execute("INSERT INTO users (name, office_number, hardware_id) VALUES (?, ?, ?)", ["Brad Majors", 348, 4])
+# db.execute("INSERT INTO users (name, office_number, hardware_id) VALUES (?, ?, ?)", ["Linda Stevens", 518, 2])
+# db.execute("INSERT INTO users (name, office_number, hardware_id) VALUES (?, ?, ?)", ["John O'Brien", 328, 2])
+# db.execute("INSERT INTO users (name, office_number, hardware_id) VALUES (?, ?, ?)", ["Beth Harper", 506, 5])
+# db.execute("INSERT INTO users (name, office_number, hardware_id) VALUES (?, ?, ?)", ["Todd Lindstrom", 148, 7])
+# db.execute("INSERT INTO users (name, office_number, hardware_id) VALUES (?, ?, ?)", ["Jessica Ellis", 222, 1])
+
 
 
 # Just testing our results
