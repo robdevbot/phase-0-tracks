@@ -77,7 +77,13 @@ while option != 9
         time_now = Time.now.to_s
         db.execute("INSERT INTO hardware (name, desktop, date_of_addition) VALUES (?, ?, ?)", [hw_name, desktop, time_now])
     elsif option == 7
-        puts "Different computer!"    
+        puts "Which user do you want to update?"
+        user_to_update = gets.chomp 
+        puts "What is the ID of their new computer?"
+        new_hw_id = gets.chomp.to_i
+        
+        db.execute("UPDATE users SET hardware_id=? WHERE name=?;", [new_hw_id, user_to_update])
+        
     elsif option == 8
         puts "All the computers!"    
     else
