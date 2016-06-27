@@ -6,6 +6,7 @@
 # 2. View all hardware profiles
 # 3. View all users with their assigned hardware
 # 4. Add user
+# update! adding a delete method here
 # 5. Add hardware profile
 # 6. Change a user's computer
 # 7. View a count of all hardware in inventory.
@@ -85,7 +86,30 @@ while option != 9
         db.execute("UPDATE users SET hardware_id=? WHERE name=?;", [new_hw_id, user_to_update])
         
     elsif option == 8
-        puts "All the computers!"    
+        
+        number_of_computer_types = db.execute("SELECT COUNT(id) FROM hardware")
+        
+        number_of_computer_types = number_of_computer_types[0][0]
+        
+        i = number_of_computer_types
+        
+        while i > 0
+            
+            number_of_i_computers = db.execute("SELECT COUNT(hardware_id) FROM users WHERE users.hardware_id = ?", [i])[0][0]
+            
+            if number_of_i_computers != 0
+                computer_name = db.execute("SELECT hardware.name FROM hardware WHERE hardware.id = ?", [i])[0][0]
+                puts "The office has #{number_of_i_computers} computer(s) with the name #{computer_name}"
+            else
+            end
+
+
+        
+            i -= 1
+        end
+        
+        
+        
     else
     end
     
