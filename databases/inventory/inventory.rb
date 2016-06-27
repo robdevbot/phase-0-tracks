@@ -40,11 +40,11 @@ while option != 9
     
     
     if option == 1
-        puts db.execute("SELECT * FROM users")
+        puts db.execute("SELECT users.name, users.office_number FROM users")
     elsif option == 2
-        puts db.execute("SELECT * FROM hardware")
+        puts db.execute("SELECT hardware.name FROM hardware")
     elsif option == 3
-       puts db.execute("SELECT * FROM users, hardware WHERE users.hardware_id = hardware.id")
+       puts db.execute("SELECT users.name, users.office_number, hardware.name FROM users, hardware WHERE users.hardware_id = hardware.id")
     elsif option == 4
         puts "What is the new user's name?"
         user_name = gets.chomp
@@ -54,6 +54,7 @@ while option != 9
         hw_id = gets.chomp.to_i
         
         db.execute("INSERT INTO users (name, office_number, hardware_id) VALUES (?, ?, ?)", [user_name, office, hw_id])
+        puts "User #{user_name} added."
     elsif option == 5
         puts "Which user do you want to delete?"
         user_to_delete = gets.chomp
@@ -77,6 +78,7 @@ while option != 9
 
         time_now = Time.now.to_s
         db.execute("INSERT INTO hardware (name, desktop, date_of_addition) VALUES (?, ?, ?)", [hw_name, desktop, time_now])
+        puts "User #{hw_name} added."
     elsif option == 7
         puts "Which user do you want to update?"
         user_to_update = gets.chomp 
@@ -84,6 +86,9 @@ while option != 9
         new_hw_id = gets.chomp.to_i
         
         db.execute("UPDATE users SET hardware_id=? WHERE name=?;", [new_hw_id, user_to_update])
+        
+        hw_check = db.execute("SELECT hardware.name FROM hardware WHERE id = ?", [new_hw_id])
+        puts "User #{user_to_update} is now assigned a #{hw_check}"
         
     elsif option == 8
         
