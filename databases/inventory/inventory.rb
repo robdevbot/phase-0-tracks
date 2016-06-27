@@ -1,9 +1,21 @@
-# require gems
+# This is an inventory-taking program for IT professionals in office environments. 
+# I had to do this at an old job once, so I can attest that it's a big pain in the neck.
+
+# Options
+# 1. View all users
+# 2. View all hardware profiles
+# 3. View all users with their assigned hardware
+# 4. Add user
+# 5. Add hardware profile
+# 6. Change a user's computer
+# 7. View a count of all hardware in inventory.
+# 8. Exit
+
+# require gem
 require 'sqlite3'
 
-# create SQLite3 database
+# select our SQLite3 database
 db = SQLite3::Database.new("inventory.db")
-
 
 
 # create inventory and hardware tables (if they're not there already)
@@ -63,12 +75,9 @@ db = SQLite3::Database.new("inventory.db")
 # db.execute("INSERT INTO users (name, office_number, hardware_id) VALUES (?, ?, ?)", ["Todd Lindstrom", 148, 7])
 # db.execute("INSERT INTO users (name, office_number, hardware_id) VALUES (?, ?, ?)", ["Jessica Ellis", 222, 1])
 
-
-
 # Just testing our results
 # hardware = db.execute("SELECT * FROM hardware")
 # puts hardware
 
-
-users = db.execute("SELECT * FROM users")
-puts users
+# users = db.execute("SELECT * FROM users")
+# puts users
