@@ -47,7 +47,13 @@ while option != 9
     elsif option == 4
         puts "Add!"    
     elsif option == 5
-        puts "Delete!"    
+        puts "Which user do you want to delete?"
+        user_to_delete = gets.chomp
+        delete_command = <<-deleter
+        DELETE FROM users WHERE name = "#{user_to_delete}"
+        deleter
+        db.execute(delete_command)
+        puts "User #{user_to_delete} deleted."
     elsif option == 6
         puts "New Computer!"    
     elsif option == 7
