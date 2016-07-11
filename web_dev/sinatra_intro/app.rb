@@ -12,6 +12,31 @@ get '/' do
   "#{params[:name]} is #{params[:age]} years old."
 end
 
+
+get '/contact' do
+  "Barack Obama<br>1600 Pennsylvania Avenue<br>Washington, DC<br>20500"
+end
+
+get '/great_job' do
+  if params['name']
+    "Good job, #{params['name']}!"
+  else
+    "Good job"
+  end
+end
+
+get '/:a/plus/:b' do
+  c = :a.to_i + :b.to_i
+  c.to_s
+end
+
+get '/find' do
+  studentname = params['Name']
+  db.execute("SELECT * FROM students WHERE name=#{studentname}")
+end
+
+
+
 # write a GET route with
 # route parameters
 get '/about/:person' do
